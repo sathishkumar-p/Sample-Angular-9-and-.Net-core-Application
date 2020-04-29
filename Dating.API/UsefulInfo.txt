@@ -1,0 +1,7 @@
+For Run App: dotnet run 
+For watch run - change in code automatically reload the app: dotnet watch run
+Create App: dotnet new webapi -n <<FolderName>>
+
+Migration Code First Approach
+1. dotnet ef  migration -- Create ModelBuilder file from context menu
+2. dotnet ef database update -- Create or update the database
