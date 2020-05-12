@@ -5,3 +5,5 @@ Create App: dotnet new webapi -n <<FolderName>>
 Migration Code First Approach
 1. dotnet ef  migration -- Create ModelBuilder file from context menu
 2. dotnet ef database update -- Create or update the database
+
+Safe Secret - used to store screte information like config token key, in production used to store envirnoment , local development - use super Secret

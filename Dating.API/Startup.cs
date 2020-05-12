@@ -1,19 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Dating.API.Data;
+using Dating.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Dating.API
@@ -38,6 +32,13 @@ namespace Dating.API
             //Other Than scoped, Transist- One instance every http request, Singleton creates one instance application cycle
             services.AddScoped<IAuthRepository, AuthRepository>();
 
+
+            //Global Exception Handling
+            services.AddControllers(options =>
+                {
+                    options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+                });
+                
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>{
                        options.TokenValidationParameters = new TokenValidationParameters{
@@ -60,7 +61,6 @@ namespace Dating.API
 
             app.UseCors(x =>x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());// Order is matter in config
             app.UseAuthentication();
-           // app.UseHttpsRedirection();
 
             app.UseRouting();
 
