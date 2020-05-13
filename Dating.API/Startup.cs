@@ -1,4 +1,5 @@
 using System.Text;
+using AutoMapper;
 using Dating.API.Data;
 using Dating.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -24,14 +25,16 @@ namespace Dating.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(
+                options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
             services.AddCors(); // order is not matter , complie doesn't care about it
+            services.AddAutoMapper(typeof(DatingRepository).Assembly);
 
             // Scoped create single instance for every http request but uses the same instance for the http request, act as singleton 
             //Other Than scoped, Transist- One instance every http request, Singleton creates one instance application cycle
             services.AddScoped<IAuthRepository, AuthRepository>();
-
+            services.AddScoped<IDatingRepository, DatingRepository>();
 
             //Global Exception Handling
             services.AddControllers(options =>
