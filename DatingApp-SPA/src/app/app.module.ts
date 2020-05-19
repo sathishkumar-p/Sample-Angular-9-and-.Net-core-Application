@@ -3,21 +3,35 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtModule } from '@auth0/angular-jwt';
+import { NgxGalleryModule } from 'ngx-gallery-9';
 //Above section is node modules import
 
 // Below section is  our app imports
+//import should start with ./ or../ not a folder it will cause error in prod build and also remove unused module or parameters 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
+import { MembercardComponent } from './members/membercard/membercard.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberDetailResolver } from './_reslovers/member-detail.resolver';
+import { AuthGuard } from './_gaurds/auth.guard';
+import { UserService } from './_services/user.service';
+import { MemberListResolver } from './_reslovers/member-list.resolver';
+
+export function tokenGetter(){
+   return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -26,8 +40,10 @@ import { RouterModule } from '@angular/router';
       HomeComponent,
       RegisterComponent,
       MemberListComponent,
+      MembercardComponent, 
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -35,11 +51,24 @@ import { RouterModule } from '@angular/router';
       FormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
+      TabsModule.forRoot(),
+      NgxGalleryModule,
       RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+         config:{
+            tokenGetter:tokenGetter,
+            whitelistedDomains:['localhost:5000'],
+            blacklistedRoutes:['localhost:5000/api/auth']
+         }
+      })
    ],
    providers: [
       AuthService,
-      AlertifyService
+      AlertifyService,
+      AuthGuard,
+      UserService,
+      MemberDetailResolver,
+      MemberListResolver
    ],
    bootstrap: [
       AppComponent

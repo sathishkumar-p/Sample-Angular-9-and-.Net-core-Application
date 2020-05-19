@@ -1,5 +1,9 @@
 # Sample-Angular9-Netcore3.1
 
+Application
+User name: head
+password: password
+
 #Angular 9
 
 Features:
@@ -7,11 +11,39 @@ Features:
     Angular JWT token
     NGX bootstrap
     Alertify Service
+    Auth0/JwtModule for set token
+    Ngx-galler-9
+    Route Resolver
+    Tslint Rules
+    Envirnoment url 
+    typings.d.ts
+
+Bootstrap: 
+    Theme set
+    Cards
+    Navigation Bar setup for page
+    TabModule with custom css - style.css
+
 
 Useful commands:
     ng g guard auth --skipTests  : To generate route guard file
 
+Route Resolver: 
+    Basically, a Resolver acts like middleware, which can be executed before a component is loaded.
+    Interface that classes can implement to be a data provider. A data provider class can be used with the router to resolve data during navigation. 
+    The interface defines a resolve() method that will be invoked when the navigation starts. The router will then wait for the data to be resolved before the route is finally activated.
 
+tslint.json
+    Used to turn off warning rules of code design. Work like sonarlint rules for best code practice 
+
+typings.d.ts
+    Import like 'import * as alertify from 'alertifyjs';' such as module support typescript, which is not available angular customized.when we import it will show warning, to stop the warning, declare the module in this file.
+
+Ngx-galler-9
+    Display photos like our photo gallery view.
+
+Auth0/JwtModule for set token
+    Used to set jwt token automatically to every api call.
 
 #.Net Core 3.1 
 
