@@ -7,6 +7,7 @@ import { AuthGuard } from './_gaurds/auth.guard';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_reslovers/member-detail.resolver';
 import { MemberListResolver } from './_reslovers/member-list.resolver';
+import { SimpleaggridComponent } from './ag-grid/simpleaggrid/simpleaggrid.component';
 
 export const appRoutes: Routes =[
     {path: 'home', component:HomeComponent},
@@ -18,7 +19,8 @@ export const appRoutes: Routes =[
             {path: 'members', component:MemberListComponent, resolve:{users:MemberListResolver}},
             {path: 'members/:id', component:MemberDetailComponent, resolve:{user:MemberDetailResolver}},
             {path: 'messages', component:MessagesComponent},
-            {path: 'lists', component:ListsComponent}
+            {path: 'lists', component:ListsComponent},
+            {path: 'aggrid', component:SimpleaggridComponent}
         ]
     },
     {path: '**', redirectTo:'home', pathMatch: 'full'},

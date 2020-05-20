@@ -17,6 +17,9 @@ Features:
     Tslint Rules
     Envirnoment url 
     typings.d.ts
+    Features change css into scss - renamer
+    Ag grid
+
 
 Bootstrap: 
     Theme set
@@ -44,6 +47,13 @@ Ngx-galler-9
 
 Auth0/JwtModule for set token
     Used to set jwt token automatically to every api call.
+
+Features change css into scss - renamer
+    https://medium.com/@ngubanethabo.ambrose/migrate-from-css-to-scss-stylesheets-for-existing-angular-application-d61f8061f5b7
+
+Ag Grid
+    Component example
+
 
 #.Net Core 3.1 
 
@@ -79,3 +89,6 @@ Data Seeding
 Reposity Pattern
     Used Generic Add, Delete functionlity to avoid code repition
     Separation of Data and Service layers
+
+
+    

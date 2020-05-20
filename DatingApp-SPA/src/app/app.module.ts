@@ -29,6 +29,11 @@ import { AuthGuard } from './_gaurds/auth.guard';
 import { UserService } from './_services/user.service';
 import { MemberListResolver } from './_reslovers/member-list.resolver';
 
+//Ag Grid Component
+import { AgGridModule } from 'ag-grid-angular';
+import { SimpleaggridComponent } from './ag-grid/simpleaggrid/simpleaggrid.component';
+
+
 export function tokenGetter(){
    return localStorage.getItem('token');
 }
@@ -43,7 +48,10 @@ export function tokenGetter(){
       MembercardComponent, 
       ListsComponent,
       MessagesComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+
+      //Ag Grid Examples
+      SimpleaggridComponent
    ],
    imports: [
       BrowserModule,
@@ -60,7 +68,10 @@ export function tokenGetter(){
             whitelistedDomains:['localhost:5000'],
             blacklistedRoutes:['localhost:5000/api/auth']
          }
-      })
+      }),
+
+      //Ag grid module
+      AgGridModule.withComponents([])
    ],
    providers: [
       AuthService,

@@ -6,6 +6,7 @@
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
 
 
+
 .tab-panel {
     border: 1px solid #ddd;
     padding: 10px;
@@ -51,3 +52,12 @@
     border-top: 1px solid #eee;
     padding: 15px 0;
   }
+
+
+//Ag Grid Component Theme and style
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+
+.ag-theme-alpine {
+    @include ag-theme-alpine();
+}
