@@ -36,7 +36,7 @@ namespace Dating.API.Data
 
         public async Task<bool> SaveAll()
         {
-            return await _context.SaveChangesAsync() > 0;
+            return await _context.SaveChangesAsync() > 0; // Return if any update or save the data count will be positive 
         }
     }
 }

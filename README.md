@@ -17,6 +17,10 @@ Features:
     Tslint Rules
     Envirnoment url 
     typings.d.ts
+    Template - driven Form  
+    ViewChild - Template Reference
+    CanDeactivate
+    HostListener 
     Features change css into scss - renamer
     Ag grid
 
@@ -48,6 +52,12 @@ Ngx-galler-9
 Auth0/JwtModule for set token
     Used to set jwt token automatically to every api call.
 
+CanDeactivate: 
+    Protect the route by clicking the back button mistakenly. Alert box will appear with custom msg 
+
+HostListener:
+    Listen the browser window like tab action or reload page to protect the user change from mistaken activity.
+
 Features change css into scss - renamer
     https://medium.com/@ngubanethabo.ambrose/migrate-from-css-to-scss-stylesheets-for-existing-angular-application-d61f8061f5b7
 
@@ -68,6 +78,7 @@ Features:
     AutoMapper
     Data Seeding
     Repository Pattern
+    Update the user userful way 
 
 
 For Run App - dotnet run 

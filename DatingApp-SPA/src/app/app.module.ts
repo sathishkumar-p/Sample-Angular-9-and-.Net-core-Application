@@ -28,10 +28,14 @@ import { MemberDetailResolver } from './_reslovers/member-detail.resolver';
 import { AuthGuard } from './_gaurds/auth.guard';
 import { UserService } from './_services/user.service';
 import { MemberListResolver } from './_reslovers/member-list.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_reslovers/member-edit.resolver'
 
 //Ag Grid Component
 import { AgGridModule } from 'ag-grid-angular';
 import { SimpleaggridComponent } from './ag-grid/simpleaggrid/simpleaggrid.component';
+import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
+;
 
 
 export function tokenGetter(){
@@ -49,6 +53,7 @@ export function tokenGetter(){
       ListsComponent,
       MessagesComponent,
       MemberDetailComponent,
+      MemberEditComponent,
 
       //Ag Grid Examples
       SimpleaggridComponent
@@ -79,7 +84,9 @@ export function tokenGetter(){
       AuthGuard,
       UserService,
       MemberDetailResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent

@@ -16,7 +16,7 @@ namespace Dating.API.Data
         }
         public async Task<User> Login(string username, string password)
         {
-            var user = await _context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Username == username);
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
 
             if(user == null)
             return null;
