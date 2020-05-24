@@ -10,5 +10,6 @@ namespace Dating.API.Data
 
         public DbSet<Value>  Values{ get; set; } // Table name must be plural 
         public DbSet<User>   Users{get; set;}
+        public DbSet<Photo>  Photo{ get; set; }
     }
 }

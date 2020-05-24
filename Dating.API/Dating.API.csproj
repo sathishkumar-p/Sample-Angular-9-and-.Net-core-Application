@@ -13,5 +13,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="*"/>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="*"/>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="*"/>
+    <PackageReference Include="CloudinaryDotNet" Version="1.10.0"/>
   </ItemGroup>
 </Project>

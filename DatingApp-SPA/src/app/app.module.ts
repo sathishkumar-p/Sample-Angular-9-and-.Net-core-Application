@@ -35,6 +35,8 @@ import { MemberEditResolver } from './_reslovers/member-edit.resolver'
 import { AgGridModule } from 'ag-grid-angular';
 import { SimpleaggridComponent } from './ag-grid/simpleaggrid/simpleaggrid.component';
 import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload';
 ;
 
 
@@ -54,6 +56,7 @@ export function tokenGetter(){
       MessagesComponent,
       MemberDetailComponent,
       MemberEditComponent,
+      PhotoEditorComponent,
 
       //Ag Grid Examples
       SimpleaggridComponent
@@ -67,6 +70,7 @@ export function tokenGetter(){
       TabsModule.forRoot(),
       NgxGalleryModule,
       RouterModule.forRoot(appRoutes),
+      FileUploadModule,
       JwtModule.forRoot({
          config:{
             tokenGetter:tokenGetter,

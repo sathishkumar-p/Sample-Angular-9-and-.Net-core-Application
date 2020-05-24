@@ -29,6 +29,7 @@ namespace Dating.API
                 options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
             services.AddCors(); // order is not matter , complie doesn't care about it
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
 
             // Scoped create single instance for every http request but uses the same instance for the http request, act as singleton 
