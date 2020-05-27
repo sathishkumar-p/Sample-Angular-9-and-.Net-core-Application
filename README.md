@@ -20,7 +20,10 @@ Features:
     Template - driven Form  
     ViewChild - Template Reference
     CanDeactivate
+    ng2-file upload
     HostListener 
+    lite-server
+    View Encapsulation 
     Features change css into scss - renamer
     Ag grid
 
@@ -58,6 +61,17 @@ CanDeactivate:
 HostListener:
     Listen the browser window like tab action or reload page to protect the user change from mistaken activity.
 
+Any to any component Communication:
+    BehaviorSubject Obeservable is used to communicate between the components. 
+
+lite-server:
+    Host the dist folder locally like iis server. To run lite-server --baseDir="dist"
+
+View Encapsulation 
+    None: Override the component css styles including the angular material at component level
+    Native: 
+    Emulated
+
 Features change css into scss - renamer
     https://medium.com/@ngubanethabo.ambrose/migrate-from-css-to-scss-stylesheets-for-existing-angular-application-d61f8061f5b7
 
@@ -79,6 +93,7 @@ Features:
     Data Seeding
     Repository Pattern
     Update the user userful way 
+    Cloudinary 
 
 
 For Run App - dotnet run 
@@ -101,5 +116,5 @@ Reposity Pattern
     Used Generic Add, Delete functionlity to avoid code repition
     Separation of Data and Service layers
 
-
-    
+Cloudinary  
+    Cloud platform for video/image secure upload with access keys, support image scaling and much formating options

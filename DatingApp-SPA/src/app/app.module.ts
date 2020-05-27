@@ -37,7 +37,6 @@ import { SimpleaggridComponent } from './ag-grid/simpleaggrid/simpleaggrid.compo
 import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
-;
 
 
 export function tokenGetter(){

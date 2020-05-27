@@ -21,7 +21,9 @@ export class PhotoEditorComponent implements OnInit {
   currentMain: Photo;
 
   constructor(private authService: AuthService, private userService: UserService,
-    private alertify: AlertifyService) { }
+    private alertify: AlertifyService) { 
+      this.initializeUploader();
+    }
     
   ngOnInit() {
   }
@@ -30,6 +32,7 @@ export class PhotoEditorComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
+  //Upload the multiple or single photo directly to api url in the form of IfromFile Format
   initializeUploader() {
     this.uploader = new FileUploader({
       url: this.baseUrl + 'users/' + this.authService.decodeToken.nameid + '/photos',
@@ -41,8 +44,10 @@ export class PhotoEditorComponent implements OnInit {
       maxFileSize: 10 * 1024 * 1024
     });
 
+    //Cross origin policy issue reslove
     this.uploader.onAfterAddingFile =(file) => {file.withCredentials = false;};
     
+    // On succesful update this item will triger
     this.uploader.onSuccessItem = (item, response, status, headers) => {
       if (response) {
         const res: Photo = JSON.parse(response);
@@ -81,6 +86,4 @@ export class PhotoEditorComponent implements OnInit {
       });
     });
   }
-
-
 }

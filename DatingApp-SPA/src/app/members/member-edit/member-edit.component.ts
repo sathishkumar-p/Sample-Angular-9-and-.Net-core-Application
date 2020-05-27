@@ -15,6 +15,7 @@ export class MemberEditComponent implements OnInit {
   //View Child get the template reference variable like id in jquery 
   @ViewChild('editForm', {static: true}) editForm:NgForm;
   user:User;
+  photoUrl: string;
 
   //Host Listener used to listen browser object changes like tab closing, reload the tab
   @HostListener('window:beforeunload', ['$event'])
@@ -30,6 +31,7 @@ export class MemberEditComponent implements OnInit {
     this.router.data.subscribe(data => {
       this.user = data['user'];
     });
+    this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
 
   updateUser(){
