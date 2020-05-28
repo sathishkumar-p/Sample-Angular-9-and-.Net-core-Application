@@ -24,15 +24,21 @@ Features:
     HostListener 
     lite-server
     View Encapsulation 
+    Reactive Forms - Custom validator
+    Partial class 
     Features change css into scss - renamer
     Ag grid
 
 
 Bootstrap: 
     Theme set
-    Cards
+    Cards component
     Navigation Bar setup for page
     TabModule with custom css - style.css
+    Date Picker - BsDatePickerModule
+    FormGroup
+    Container, Rows,  Column design
+    image style
 
 
 Useful commands:
