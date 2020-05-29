@@ -8,6 +8,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery-9';
+import {TimeAgoPipe} from 'time-ago-pipe';
 //Above section is node modules import
 
 // Below section is  our app imports
@@ -57,6 +58,7 @@ export function tokenGetter(){
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
+      TimeAgoPipe,
 
       //Ag Grid Examples
       SimpleaggridComponent

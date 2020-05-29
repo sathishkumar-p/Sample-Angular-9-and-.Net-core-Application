@@ -26,6 +26,7 @@ Features:
     View Encapsulation 
     Reactive Forms - Custom validator
     Partial class 
+    Time Ago Pipe, date pipe
     Features change css into scss - renamer
     Ag grid
 
@@ -100,6 +101,7 @@ Features:
     Repository Pattern
     Update the user userful way 
     Cloudinary 
+    Action Filter
 
 
 For Run App - dotnet run 
@@ -124,3 +126,6 @@ Reposity Pattern
 
 Cloudinary  
     Cloud platform for video/image secure upload with access keys, support image scaling and much formating options
+
+Action Filter
+    Used to monitor the activity of action (controller methods), next() execute after the Action method is executed
