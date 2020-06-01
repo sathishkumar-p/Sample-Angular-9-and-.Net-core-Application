@@ -9,5 +9,24 @@ namespace Dating.API.Data
         }
         public DbSet<User>   Users{get; set;} // Table name must be plural 
         public DbSet<Photo>  Photos{ get; set; }
+        public DbSet<Like>  Likes{ get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder){
+            modelBuilder.Entity<Like>()
+                        .HasKey(k => new {k.LikeeId, k.LikerId});
+            
+            modelBuilder.Entity<Like>()
+                        .HasOne(k => k.Likee)
+                        .WithMany(k => k.Likers)
+                        .HasForeignKey(u => u.LikeeId)
+                        .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<Like>()
+                        .HasOne(k => k.Liker)
+                        .WithMany(k => k.Likees)
+                        .HasForeignKey(u => u.LikerId)
+                        .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

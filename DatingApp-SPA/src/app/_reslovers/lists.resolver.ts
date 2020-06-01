@@ -11,16 +11,17 @@ import { Injectable } from '@angular/core';
 //The interface defines a resolve() method that will be invoked when the navigation starts. The router will then wait for the data to be resolved before the route is finally activated.
 
 @Injectable()
-export class MemberListResolver implements Resolve<User[]> {
+export class ListResolver implements Resolve<User[]> {
     pageNumber = 1;
     pageSize = 5;
+    likesParam = "Likers";
 
     constructor(private userService: UserService, 
         private router: Router,private alertify: AlertifyService)
     {}
 
     resolve(route: ActivatedRouteSnapshot):Observable<User[]>{
-        return this.userService.getUsers(this.pageNumber, this.pageSize).pipe(           
+        return this.userService.getUsers(this.pageNumber, this.pageSize, null, this.likesParam).pipe(           
             catchError(error => {
             this.alertify.error("Problem retrieving data");
             this.router.navigate(['/home']);

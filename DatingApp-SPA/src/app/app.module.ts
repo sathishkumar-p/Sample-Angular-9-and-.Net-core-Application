@@ -8,7 +8,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery-9';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { TimeAgoPipe } from 'time-ago-pipe';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 //Above section is node modules import
 
 // Below section is  our app imports
@@ -39,6 +41,7 @@ import { SimpleaggridComponent } from './ag-grid/simpleaggrid/simpleaggrid.compo
 import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ListResolver } from './_reslovers/lists.resolver';
 
 
 export function tokenGetter(){
@@ -58,8 +61,6 @@ export function tokenGetter(){
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      TimeAgoPipe,
-
       //Ag Grid Examples
       SimpleaggridComponent
    ],
@@ -75,6 +76,8 @@ export function tokenGetter(){
       FileUploadModule,
       ReactiveFormsModule,
       BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       JwtModule.forRoot({
          config:{
             tokenGetter:tokenGetter,
@@ -94,7 +97,8 @@ export function tokenGetter(){
       MemberDetailResolver,
       MemberListResolver,
       MemberEditResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      ListResolver
    ],
    bootstrap: [
       AppComponent

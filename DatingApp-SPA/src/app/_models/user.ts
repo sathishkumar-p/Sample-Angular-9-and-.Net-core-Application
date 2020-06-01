@@ -12,6 +12,7 @@ export interface User {
   photoUrl: string;
   city: string;
   country: string;
+  gender: string;
 
   // Optional Parameter should come after the required parameters
   interests?: string;

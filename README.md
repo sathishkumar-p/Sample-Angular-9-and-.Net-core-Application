@@ -102,6 +102,8 @@ Features:
     Update the user userful way 
     Cloudinary 
     Action Filter
+    Fluent API
+    Relationships in EF
 
 
 For Run App - dotnet run 
@@ -129,3 +131,6 @@ Cloudinary
 
 Action Filter
     Used to monitor the activity of action (controller methods), next() execute after the Action method is executed
+
+Fluent API
+  Model builder oncreatingmodel specify the table specification 
