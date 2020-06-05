@@ -10,6 +10,7 @@ namespace Dating.API.Data
         public DbSet<User>   Users{get; set;} // Table name must be plural 
         public DbSet<Photo>  Photos{ get; set; }
         public DbSet<Like>  Likes{ get; set; }
+        public DbSet<Message>  Messages{ get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder){
@@ -27,6 +28,17 @@ namespace Dating.API.Data
                         .WithMany(k => k.Likees)
                         .HasForeignKey(u => u.LikerId)
                         .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Message>()
+                        .HasOne(u => u.Sender)
+                        .WithMany(k => k.MessageSent)
+                        .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<Message>()
+                        .HasOne(u => u.Recipient)
+                        .WithMany(k => k.MessageReceived)
+                        .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

@@ -28,7 +28,9 @@ Features:
     Partial class 
     Time Ago Pipe, date pipe
     Features change css into scss - renamer
+    Stop Event propagation 
     Ag grid
+    Tap
 
 
 Bootstrap: 
@@ -85,7 +87,10 @@ Features change css into scss - renamer
 Ag Grid
     Component example
 
+Tap
+    Execute before the subscibe method in pipe
 
+================================================
 #.Net Core 3.1 
 
 Features: 
@@ -104,6 +109,7 @@ Features:
     Action Filter
     Fluent API
     Relationships in EF
+    AutoMapper Amazing mapping of HttpPost Messages
 
 
 For Run App - dotnet run 

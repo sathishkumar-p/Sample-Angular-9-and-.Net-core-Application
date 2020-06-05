@@ -42,6 +42,8 @@ import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ListResolver } from './_reslovers/lists.resolver';
+import { MessagesResolver } from './_reslovers/message.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 export function tokenGetter(){
@@ -62,7 +64,8 @@ export function tokenGetter(){
       MemberEditComponent,
       PhotoEditorComponent,
       //Ag Grid Examples
-      SimpleaggridComponent
+      SimpleaggridComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -98,7 +101,8 @@ export function tokenGetter(){
       MemberListResolver,
       MemberEditResolver,
       PreventUnsavedChanges,
-      ListResolver
+      ListResolver,
+      MessagesResolver
    ],
    bootstrap: [
       AppComponent
