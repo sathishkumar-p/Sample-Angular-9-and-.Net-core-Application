@@ -4,7 +4,7 @@ import { Photo } from './photo';
 //Userful for Intelligence, AutoMapper
 export interface User {
   id: number;
-  username: string;
+  userName: string;
   knownAs: string;
   age: number;
   created: Date;
@@ -19,4 +19,5 @@ export interface User {
   introduction?: string;
   lookingFor?: string;
   photos?: Photo[];
+  roles?: string[];
 }

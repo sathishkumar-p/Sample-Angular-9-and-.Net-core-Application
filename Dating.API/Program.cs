@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dating.API.Data;
+using Dating.API.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,8 +25,10 @@ namespace Dating.API
                try
                {
                    var context = services.GetRequiredService<DataContext>();
+                   var userManager = services.GetRequiredService<UserManager<User>>();
+                   var roleManager = services.GetRequiredService<RoleManager<Role>>();
                    context.Database.Migrate();
-                   Seed.SeedUser(context);
+                   Seed.SeedUser(userManager, roleManager);
                }
                catch (Exception e)
                {        

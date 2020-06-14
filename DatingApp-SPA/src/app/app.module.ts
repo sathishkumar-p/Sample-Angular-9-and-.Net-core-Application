@@ -11,6 +11,7 @@ import { NgxGalleryModule } from 'ngx-gallery-9';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { ModalModule } from 'ngx-bootstrap/modal';
 //Above section is node modules import
 
 // Below section is  our app imports
@@ -44,6 +45,11 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { ListResolver } from './_reslovers/lists.resolver';
 import { MessagesResolver } from './_reslovers/message.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directive/hasRole.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
 
 
 export function tokenGetter(){
@@ -65,7 +71,12 @@ export function tokenGetter(){
       PhotoEditorComponent,
       //Ag Grid Examples
       SimpleaggridComponent,
-      MemberMessagesComponent
+      MemberMessagesComponent,
+      AdminPanelComponent,
+      HasRoleDirective,
+      UserManagementComponent,
+      PhotoManagementComponent,
+      RolesModalComponent
    ],
    imports: [
       BrowserModule,
@@ -88,6 +99,7 @@ export function tokenGetter(){
             blacklistedRoutes:['localhost:5000/api/auth']
          }
       }),
+      ModalModule.forRoot(),
 
       //Ag grid module
       AgGridModule.withComponents([])
@@ -104,6 +116,7 @@ export function tokenGetter(){
       ListResolver,
       MessagesResolver
    ],
+   entryComponents: [RolesModalComponent],
    bootstrap: [
       AppComponent
    ]

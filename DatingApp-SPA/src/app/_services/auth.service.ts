@@ -33,10 +33,11 @@ login(model: any)
         if(user)
         {
           localStorage.setItem("token", user.token);
-          localStorage.setItem("user", JSON.stringify(user.user));
+          localStorage.setItem("user", JSON.stringify(user.appUser));
           this.decodeToken = this.jwtHelper.decodeToken(user.token);
-          this.currentUser = user.user;
+          this.currentUser = user.appUser;
           this.changeMemberPhoto(this.currentUser.photoUrl);
+          debugger;
         }
     }
   ));
@@ -51,6 +52,18 @@ register(model: any) {
 loggedIn(){
   const token = localStorage.getItem("token");
   return !this.jwtHelper.isTokenExpired(token);
+}
+
+roleMatch(allowedRoles):boolean{
+  let isMatch = false;
+  const userRoles = this.decodeToken.role as Array<string>;
+  allowedRoles.forEach((role) => {
+    if(userRoles.includes(role)){
+      isMatch = true;
+      return isMatch;
+    }
+  });
+  return isMatch;
 }
 
 }

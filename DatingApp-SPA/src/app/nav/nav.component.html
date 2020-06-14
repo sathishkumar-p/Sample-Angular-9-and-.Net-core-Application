@@ -14,6 +14,9 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/aggrid']" >Ag-Grid</a>
       </li>
+      <li *appHasRole="['Admin','Moderator']" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/admin']" >Admin</a>
+      </li>
     </ul>
 
     <div class="dropdown" *ngIf="loggedIn()" dropdown>
@@ -33,7 +36,7 @@
 
     <!-- Template driven form to validate the login details  -->
     <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
-      <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" required [(ngModel)]="model.username">
+      <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" required [(ngModel)]="model.userName">
       <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password" required [(ngModel)]="model.password">
       <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
     </form>

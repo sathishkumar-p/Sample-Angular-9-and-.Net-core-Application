@@ -31,6 +31,8 @@ Features:
     Stop Event propagation 
     Ag grid
     Tap
+    Custom Structual directive
+    Rolebased authentication
 
 
 Bootstrap: 
@@ -85,12 +87,14 @@ Features change css into scss - renamer
     https://medium.com/@ngubanethabo.ambrose/migrate-from-css-to-scss-stylesheets-for-existing-angular-application-d61f8061f5b7
 
 Ag Grid
-    Component example
+    Advanced Grouping, sorting, export excel- work more like excel
 
 Tap
     Execute before the subscibe method in pipe
 
-================================================
+Separate Operator
+ separate operator convert return values as array elements
+
 #.Net Core 3.1 
 
 Features: 
@@ -110,6 +114,8 @@ Features:
     Fluent API
     Relationships in EF
     AutoMapper Amazing mapping of HttpPost Messages
+    Identity for Rolebased model
+    Global level filter in Entity modal
 
 
 For Run App - dotnet run 
@@ -140,3 +146,6 @@ Action Filter
 
 Fluent API
   Model builder oncreatingmodel specify the table specification 
+
+Global level filter in Entity model
+    Used to filter the Db context objects at globally, it will be configured in db context modal creation

@@ -1,10 +1,15 @@
+using System.Net;
 using System.Text;
 using AutoMapper;
 using Dating.API.Data;
 using Dating.API.Helpers;
+using Dating.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +30,28 @@ namespace Dating.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson(
+            IdentityBuilder builder = services.AddIdentityCore<User>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            });
+
+            builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
+            builder.AddEntityFrameworkStores<DataContext>();
+            builder.AddRoleValidator<RoleValidator<Role>>();
+            builder.AddRoleManager<RoleManager<Role>>();
+            builder.AddSignInManager<SignInManager<User>>();
+            
+            services.AddControllers(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+                
+                options.Filters.Add(new AuthorizeFilter(policy));
+            }).AddNewtonsoftJson(
                 options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("SqliteConnection")));
             services.AddCors(); // order is not matter , complie doesn't care about it
@@ -34,10 +60,10 @@ namespace Dating.API
 
             // Scoped create single instance for every http request but uses the same instance for the http request, act as singleton 
             //Other Than scoped, Transist- One instance every http request, Singleton creates one instance application cycle
-            services.AddScoped<IAuthRepository, AuthRepository>();
+            // services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
 
-            //Global Exception Handling
+            //Global Exceptio n Handling
             services.AddControllers(options =>
                 {
                     options.Filters.Add(typeof(HttpGlobalExceptionFilter));
@@ -52,6 +78,13 @@ namespace Dating.API
                            ValidateIssuer = false  // webiste or server address
                        };                        
                     });
+                    
+            services.AddAuthorization(options => {
+                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("ModeratePhotoRole", policy => policy.RequireRole("Admin", "Moderator"));
+                options.AddPolicy("VipOnly", policy => policy.RequireRole("VIP"));
+            });
+
             services.AddScoped<LogUserActivity>();
         }
 
