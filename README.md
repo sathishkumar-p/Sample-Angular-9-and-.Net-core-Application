@@ -4,7 +4,7 @@ Application credentials:
 ________________________
 User name: admin
 password: password
-
+![Screenshot](screenshot_31.png)
 #Angular 9
 =================================
 Features:
