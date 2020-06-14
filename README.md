@@ -1,11 +1,5 @@
 # Sample-Angular9-Netcore3.1
 
-
-
-
-
-
-
 Application credentials:
 ________________________
 User name: admin
