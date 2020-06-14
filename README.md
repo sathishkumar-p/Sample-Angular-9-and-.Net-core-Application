@@ -4,7 +4,22 @@ Application credentials:
 ________________________
 User name: admin
 password: password
+-------------------------
+
+Application Photos:
+--------------------
 ![Screenshot](ApplicationPhotos/Screenshot_31.png)
+![Screenshot](ApplicationPhotos/Screenshot_32.png)
+![Screenshot](ApplicationPhotos/Screenshot_33.png)
+![Screenshot](ApplicationPhotos/Screenshot_34.png)
+![Screenshot](ApplicationPhotos/Screenshot_35.png)
+![Screenshot](ApplicationPhotos/Screenshot_36.png)
+![Screenshot](ApplicationPhotos/Screenshot_37.png)
+![Screenshot](ApplicationPhotos/Screenshot_38.png)
+![Screenshot](ApplicationPhotos/Screenshot_39.png)
+![Screenshot](ApplicationPhotos/Screenshot_40.png)
+
+
 #Angular 9
 =================================
 Features:
