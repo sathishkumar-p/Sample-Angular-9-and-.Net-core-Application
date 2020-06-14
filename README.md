@@ -1,7 +1,8 @@
 # Sample-Angular9-Netcore3.1
 
-Application
-User name: head
+Application credentials:
+________________________
+User name: admin
 password: password
 
 #Angular 9
