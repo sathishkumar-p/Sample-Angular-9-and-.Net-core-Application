@@ -148,6 +148,7 @@ Features:
     AutoMapper Amazing mapping of HttpPost Messages
     Identity for Rolebased model
     Global level filter in Entity modal
+    Serilog
 
 
 For Run App - dotnet run 
@@ -190,3 +191,9 @@ Fluent API
 Global level filter in Entity model
 ---------------------------------------
     Used to filter the Db context objects at globally, it will be configured in db context modal creation
+
+
+Serilog
+---------------------------------------
+    Structured logging APIs, and receives log events from the ASP.NET Core framework class libraries, but adds a stack of features that make it a more appealing choice for some kinds of apps and environments. Log4net or default log system in API not support structured logging.
+    Ref: https://nblumhardt.com/2019/10/serilog-in-aspnetcore-3/
