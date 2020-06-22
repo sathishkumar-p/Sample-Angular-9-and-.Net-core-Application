@@ -18,6 +18,9 @@ Application Photos:
 ![Screenshot](ApplicationPhotos/Screenshot_38.png)
 ![Screenshot](ApplicationPhotos/Screenshot_39.png)
 ![Screenshot](ApplicationPhotos/Screenshot_40.png)
+![Screenshot](ApplicationPhotos/Screenshot_2.png)
+![Screenshot](ApplicationPhotos/Screenshot_3.png)
+![Screenshot](ApplicationPhotos/Screenshot_4.png)
 
 
 #Angular 9
