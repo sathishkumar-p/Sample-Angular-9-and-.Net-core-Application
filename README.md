@@ -21,6 +21,7 @@ Application Photos:
 ![Screenshot](ApplicationPhotos/Screenshot_2.png)
 ![Screenshot](ApplicationPhotos/Screenshot_3.png)
 ![Screenshot](ApplicationPhotos/Screenshot_4.png)
+![Screenshot](ApplicationPhotos/Fancylog.png)
 
 
 #Angular 9
@@ -52,6 +53,7 @@ Features:
     Tap
     Custom Structual directive
     Rolebased authentication
+    ngx-fancy-logger
 
 
 Bootstrap: 
@@ -127,6 +129,11 @@ Tap
 Separate Operator
 --------------------------
  separate operator convert return values as array elements
+
+ ngx-fancy-logger
+--------------------------
+ NGX-FANCY-LOGGER is a console logger for angular applications. It provides various features like log level labels, log level emoji, time and so on etc.
+ Ref: https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/projects/ngx-fancy-logger/README.md
 
 ========================================================================================================================================
 
