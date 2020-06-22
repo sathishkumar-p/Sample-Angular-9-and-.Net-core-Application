@@ -18,6 +18,10 @@ Application Photos:
 ![Screenshot](ApplicationPhotos/Screenshot_38.png)
 ![Screenshot](ApplicationPhotos/Screenshot_39.png)
 ![Screenshot](ApplicationPhotos/Screenshot_40.png)
+![Screenshot](ApplicationPhotos/Screenshot_2.png)
+![Screenshot](ApplicationPhotos/Screenshot_3.png)
+![Screenshot](ApplicationPhotos/Screenshot_4.png)
+![Screenshot](ApplicationPhotos/Fancylog.png)
 
 
 #Angular 9
@@ -49,6 +53,7 @@ Features:
     Tap
     Custom Structual directive
     Rolebased authentication
+    ngx-fancy-logger
 
 
 Bootstrap: 
@@ -125,6 +130,11 @@ Separate Operator
 --------------------------
  separate operator convert return values as array elements
 
+ ngx-fancy-logger
+--------------------------
+ NGX-FANCY-LOGGER is a console logger for angular applications. It provides various features like log level labels, log level emoji, time and so on etc.
+ Ref: https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/projects/ngx-fancy-logger/README.md
+
 ========================================================================================================================================
 
 #.Net Core 3.1 
@@ -148,6 +158,7 @@ Features:
     AutoMapper Amazing mapping of HttpPost Messages
     Identity for Rolebased model
     Global level filter in Entity modal
+    Serilog
 
 
 For Run App - dotnet run 
@@ -190,3 +201,9 @@ Fluent API
 Global level filter in Entity model
 ---------------------------------------
     Used to filter the Db context objects at globally, it will be configured in db context modal creation
+
+
+Serilog
+---------------------------------------
+    Structured logging APIs, and receives log events from the ASP.NET Core framework class libraries, but adds a stack of features that make it a more appealing choice for some kinds of apps and environments. Log4net or default log system in API not support structured logging.
+    Ref: https://nblumhardt.com/2019/10/serilog-in-aspnetcore-3/

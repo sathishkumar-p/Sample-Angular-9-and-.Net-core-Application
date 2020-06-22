@@ -35,6 +35,8 @@ import { UserService } from './_services/user.service';
 import { MemberListResolver } from './_reslovers/member-list.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_reslovers/member-edit.resolver'
+import { NgxFancyLoggerModule } from 'ngx-fancy-logger';
+
 
 //Ag Grid Component
 import { AgGridModule } from 'ag-grid-angular';
@@ -50,6 +52,7 @@ import { HasRoleDirective } from './_directive/hasRole.directive';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
+import { environment } from 'src/environments/environment';
 
 
 export function tokenGetter(){
@@ -100,7 +103,7 @@ export function tokenGetter(){
          }
       }),
       ModalModule.forRoot(),
-
+      NgxFancyLoggerModule.forRoot(environment.loggerConfig),
       //Ag grid module
       AgGridModule.withComponents([])
    ],

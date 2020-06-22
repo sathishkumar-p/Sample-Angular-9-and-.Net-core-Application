@@ -2,9 +2,22 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { LogLevel } from 'ngx-fancy-logger';
+
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/api/'
+  apiUrl: 'http://localhost:5000/api/',
+  loggerConfig:{
+    showTime: true,
+    showEmoji: true, 
+    showLabel: true,
+    logLevel: LogLevel.DEBUG,
+    levelColor: {
+      [LogLevel.DEBUG] : 'black',
+      [LogLevel.WARNING] : 'orange',
+      [LogLevel.ERROR]: 'red'
+    }
+  }
 };
 
 /*
