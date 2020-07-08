@@ -37,7 +37,6 @@ login(model: any)
           this.decodeToken = this.jwtHelper.decodeToken(user.token);
           this.currentUser = user.appUser;
           this.changeMemberPhoto(this.currentUser.photoUrl);
-          debugger;
         }
     }
   ));
